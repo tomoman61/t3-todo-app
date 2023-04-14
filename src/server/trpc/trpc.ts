@@ -1,8 +1,8 @@
-import { initTRPC, TRPCError } from "@trpc/server";
-import superjson from "superjson";
-import { ZodError } from "zod";
+import { initTRPC, TRPCError } from '@trpc/server';
+import superjson from 'superjson';
+import { ZodError } from 'zod';
 
-import { type Context } from "./context";
+import { type Context } from './context';
 
 const t = initTRPC.context<Context>().create({
   transformer: superjson,
@@ -12,7 +12,7 @@ const t = initTRPC.context<Context>().create({
       data: {
         ...shape.data,
         zodError:
-          error.code === "BAD_REQUEST" && error.cause instanceof ZodError
+          error.code === 'BAD_REQUEST' && error.cause instanceof ZodError
             ? error.cause.flatten()
             : null,
       },
@@ -33,7 +33,7 @@ export const publicProcedure = t.procedure;
  */
 const isAuthed = t.middleware(({ ctx, next }) => {
   if (!ctx.session || !ctx.session.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
     ctx: {

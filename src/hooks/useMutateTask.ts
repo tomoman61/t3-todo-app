@@ -1,5 +1,5 @@
-import useStore from "@/store";
-import { trpc } from "@/utils/trpc";
+import useStore from '@/store';
+import { trpc } from '@/utils/trpc';
 
 export const useMutateTask = () => {
   const utils = trpc.useContext();

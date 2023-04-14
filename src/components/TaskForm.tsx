@@ -1,6 +1,6 @@
-import type { FormEvent } from "react";
-import useStore from "@/store";
-import { useMutateTask } from "@/hooks/useMutateTask";
+import type { FormEvent } from 'react';
+import useStore from '@/store';
+import { useMutateTask } from '@/hooks/useMutateTask';
 
 export const TaskForm = () => {
   const { createTaskMutation, updateTaskMutation } = useMutateTask();
@@ -9,7 +9,7 @@ export const TaskForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (editedTask.taskId === "") {
+    if (editedTask.taskId === '') {
       createTaskMutation.mutate({
         title: editedTask.title,
         body: editedTask.body,
@@ -32,7 +32,7 @@ export const TaskForm = () => {
         type="text"
         className="mb-3 border border-gray-300 px-3 py-2"
         placeholder="Title"
-        value={editedTask.title || ""}
+        value={editedTask.title || ''}
         onChange={(e) => update({ ...editedTask, title: e.target.value })}
       />
       <p className="mb-3 text-pink-500">
@@ -43,7 +43,7 @@ export const TaskForm = () => {
       <textarea
         className="mb-3 border border-gray-300 px-3 py-2"
         placeholder="Body"
-        value={editedTask.body || ""}
+        value={editedTask.body || ''}
         onChange={(e) => update({ ...editedTask, body: e.target.value })}
       />
       <p className="mb-3 text-pink-500">
@@ -52,7 +52,7 @@ export const TaskForm = () => {
       </p>
 
       <button className="rounded bg-indigo-600 px-3 py-1 text-white hover:bg-indigo-700 focus:outline-none">
-        {editedTask.taskId === "" ? "Create" : "Update"}
+        {editedTask.taskId === '' ? 'Create' : 'Update'}
       </button>
     </form>
   );

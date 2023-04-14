@@ -1,5 +1,5 @@
-import { trpc } from "@/utils/trpc";
-import { TaskItem } from "@/components/TaskItem";
+import { trpc } from '@/utils/trpc';
+import { TaskItem } from '@/components/TaskItem';
 
 export const TaskList = () => {
   const { data, isLoading, error } = trpc.todo.getTasks.useQuery();
@@ -12,12 +12,7 @@ export const TaskList = () => {
   return (
     <ul>
       {data?.map((task) => (
-        <TaskItem
-          key={task.id}
-          taskId={task.id}
-          title={task.title}
-          body={task.body}
-        />
+        <TaskItem key={task.id} taskId={task.id} title={task.title} body={task.body} />
       ))}
     </ul>
   );
