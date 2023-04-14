@@ -2,19 +2,19 @@ import { type NextPage } from "next";
 import { signOut, useSession } from "next-auth/react";
 import { Layout } from "@/components/Layout";
 import { Auth } from "@/components/Auth";
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid"
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { TaskForm } from "@/components/TaskForm";
 import { TaskList } from "@/components/TaskList";
 
 const Home: NextPage = () => {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
-  if(!session) {
+  if (!session) {
     return (
       <Layout title="Login">
         <Auth />
       </Layout>
-    )
+    );
   }
 
   return (

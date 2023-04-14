@@ -9,11 +9,11 @@ export const useMutateTask = () => {
     onSuccess: (res) => {
       const previousTodos = utils.todo.getTasks.getData();
       if (previousTodos) {
-        utils.todo.getTasks.setData(undefined, [res, ...previousTodos])
+        utils.todo.getTasks.setData(undefined, [res, ...previousTodos]);
       }
       reset();
     },
-  })
+  });
 
   const updateTaskMutation = trpc.todo.updateTask.useMutation({
     onSuccess: (res) => {
@@ -21,12 +21,12 @@ export const useMutateTask = () => {
       if (previousTodos) {
         utils.todo.getTasks.setData(
           undefined,
-          previousTodos.map((task) => task.id === res.id ? res : task)
-        )
+          previousTodos.map((task) => (task.id === res.id ? res : task))
+        );
       }
       reset();
     },
-  })
+  });
 
   const deleteTaskMutation = trpc.todo.deleteTask.useMutation({
     onSuccess: (_, variables) => {
@@ -35,11 +35,11 @@ export const useMutateTask = () => {
         utils.todo.getTasks.setData(
           undefined,
           previousTodos.filter((task) => task.id !== variables.taskId)
-        )
+        );
       }
-      reset()
+      reset();
     },
-  })
+  });
 
-  return { createTaskMutation, updateTaskMutation, deleteTaskMutation }
-}
+  return { createTaskMutation, updateTaskMutation, deleteTaskMutation };
+};

@@ -1,20 +1,20 @@
-import { create } from "zustand"
-import type { updateTaskInput } from "@/schema/todo"
+import { create } from "zustand";
+import type { updateTaskInput } from "@/schema/todo";
 
 type State = {
-  editedTask: updateTaskInput
-  updateEditedTask: (payload: updateTaskInput) => void
-  resetEditedTask: () => void
-}
+  editedTask: updateTaskInput;
+  updateEditedTask: (payload: updateTaskInput) => void;
+  resetEditedTask: () => void;
+};
 
 const useStore = create<State>((set) => ({
-  editedTask: { taskId: '', title: '', body: '' },
+  editedTask: { taskId: "", title: "", body: "" },
   updateEditedTask: (payload) => {
-    set({ editedTask: payload })
+    set({ editedTask: payload });
   },
   resetEditedTask: () => {
-    set({editedTask: { taskId: '', title: '', body: '' }})
+    set({ editedTask: { taskId: "", title: "", body: "" } });
   },
-}))
+}));
 
-export default useStore
+export default useStore;

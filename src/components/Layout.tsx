@@ -1,12 +1,12 @@
-import Head from "next/head"
-import type { FC, ReactNode } from "react"
+import Head from "next/head";
+import type { FC, ReactNode } from "react";
 
 type Props = {
-  title: string
-  children: ReactNode
-}
+  title: string;
+  children: ReactNode;
+};
 
-export const Layout: FC<Props> = ({title='T3 Stack', children}) => {
+export const Layout: FC<Props> = ({ title = "T3 Stack", children }) => {
   return (
     <>
       <Head>
@@ -18,5 +18,5 @@ export const Layout: FC<Props> = ({title='T3 Stack', children}) => {
         {children}
       </main>
     </>
-  )
-}
+  );
+};
