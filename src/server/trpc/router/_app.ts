@@ -1,5 +1,5 @@
-import { router } from "../trpc";
-import { todoRouter } from "./todo";
+import { router } from "@/server/trpc/trpc";
+import { todoRouter } from "@/server/trpc/router/todo";
 
 export const appRouter = router({
   todo: todoRouter,

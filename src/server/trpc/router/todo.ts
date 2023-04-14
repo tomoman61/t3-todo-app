@@ -1,5 +1,5 @@
-import { createTaskSchema, deleteTaskSchema, getSingleTaskSchema, updateTaskSchema } from "../../../schema/todo"
-import { router, protectedProcedure, publicProcedure } from "../trpc"
+import { createTaskSchema, deleteTaskSchema, getSingleTaskSchema, updateTaskSchema } from "@/schema/todo"
+import { router, protectedProcedure, publicProcedure } from "@/server/trpc/trpc"
 
 export const todoRouter = router({
   createTask: protectedProcedure

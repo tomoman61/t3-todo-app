@@ -1,7 +1,7 @@
-import type { FC } from "react"
-import type { updateTaskInput } from "../schema/todo"
-import { useMutateTask } from "../hooks/useMutateTask";
-import useStore from "../store";
+import { type FC } from "react"
+import { type updateTaskInput } from "@/schema/todo"
+import { useMutateTask } from "@/hooks/useMutateTask";
+import useStore from "@/store";
 import Link from "next/link";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
 

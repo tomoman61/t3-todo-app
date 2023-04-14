@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
-import { useMutateTask } from "../hooks/useMutateTask"
-import useStore from "../store";
+import useStore from "@/store";
+import { useMutateTask } from "@/hooks/useMutateTask";
 
 
 export const TaskForm = () => {

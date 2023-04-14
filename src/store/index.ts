@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import type { updateTaskInput } from "../schema/todo"
+import type { updateTaskInput } from "@/schema/todo"
 
 type State = {
   editedTask: updateTaskInput

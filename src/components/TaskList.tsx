@@ -1,5 +1,5 @@
-import { trpc } from "../utils/trpc"
-import { TaskItem } from "./TaskItem";
+import { trpc } from "@/utils/trpc";
+import { TaskItem } from "@/components/TaskItem";
 
 export const TaskList = () => {
   const { data, isLoading, error } = trpc.todo.getTasks.useQuery();
