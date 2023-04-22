@@ -26,3 +26,16 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+DB setup
+start db
+
+$ docker compose up -d
+remove db
+
+$ docker compose rm -s -f -v
+prisma migrate and type generation
+
+$ npx prisma migrate dev
+$ npx prisma generate
+$ npx prisma studio
